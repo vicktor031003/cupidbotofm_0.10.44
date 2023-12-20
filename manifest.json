@@ -1,0 +1,55 @@
+{
+    "name": "CupidBot OFM",
+    "description": "#1 bot for OFM funneling",
+    "version": "0.10.44",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "action": {
+        "default_popup": "popup.html?isChromePopup=true",
+        "default_title": "CupidBot OFM",
+        "default_icon": "cupidbotofm.png"
+    },
+    "content_scripts": [
+        {
+            "all_frames": true,
+            "js": [
+                "contentScript.js"
+            ],
+            "matches": [
+                "*://*/*"
+            ],
+            "run_at": "document_end",
+            "type": "module"
+        }
+    ],
+    "options_page": "options.html",
+    "permissions": [
+        "debugger",
+        "storage",
+        "unlimitedStorage",
+        "webRequest",
+        "declarativeNetRequest",
+        "tabs"
+    ],
+    "host_permissions": [
+        "*://*/*"
+    ],
+    "icons": {
+        "16": "cupidbotofm.png",
+        "48": "cupidbotofm.png",
+        "128": "cupidbotofm.png"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "*"
+            ],
+            "matches": [
+                "*://*/*"
+            ]
+        }
+    ]
+}
